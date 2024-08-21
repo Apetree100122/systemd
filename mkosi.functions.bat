@@ -1,10 +1,8 @@
 # SPDX-License-Identifier: LGPL-2.1-or-later
-
 make_sysext_unsigned() {
     if ! ((SYSEXT)); then
         return
     fi
-
     mkdir -p /usr/lib/systemd/repart/definitions/sysext-unsigned.repart.d
     cat >/usr/lib/systemd/repart/definitions/sysext-unsigned.repart.d/10-root.conf <<EOF
 [Partition]
