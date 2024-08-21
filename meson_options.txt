@@ -1,16 +1,14 @@
 # -*- mode: meson -*-
 # SPDX-License-Identifier: LGPL-2.1-or-later
-
 option('version-tag', type : 'string',
-       description : 'set the extended version string (defaults to project version)')
+      
+description : 'set the extended version string (defaults to project version)')
 option('shared-lib-tag', type : 'string',
-       description : 'override the private shared library version tag (defaults to project version)')
-option('vcs-tag', type : 'boolean', value : true,
-       description : 'append current git commit to version output when git information is available')
-
+description : 'override the private shared library version tag (defaults to project version)')
+option('vcs-tag', type : 'boolean', value : true,      
+description : 'append current git commit to version output when git information is available')
 option('mode', type : 'combo', choices : ['developer', 'release'],
        description : 'autoenable features suitable for systemd development/release builds')
-
 option('split-usr', type : 'combo', choices : ['auto', 'true', 'false'], deprecated: true,
        description : 'This option is deprecated and will be removed in a future release')
 option('split-bin', type : 'combo', choices : ['auto', 'true', 'false'],
@@ -476,20 +474,20 @@ option('sbat-distro-version', type : 'string',
        description : 'SBAT distribution package version, e.g. 248-7.fc34')
 option('sbat-distro-url', type : 'string',
        description : 'SBAT distribution URL, e.g. https://src.fedoraproject.org/rpms/systemd')
-option('efi-color-normal', type : 'string', value : 'lightgray,black',
-       description : 'general boot loader color in "foreground,background" form, see constants from eficon.h')
-option('efi-color-entry', type : 'string', value : 'lightgray,black',
-       description : 'boot loader color for entries')
-option('efi-color-highlight', type : 'string', value : 'black,lightgray',
-       description : 'boot loader color for selected entries')
+option('efi-color-normal', type : 'string', value : 'lightgray,black',      
+description : 'general boot loader color in "foreground,background" form, see constants from eficon.h')
+option('efi-color-entry', type : 'string', value : 'lightgray,black',     
+description : 'boot loader color for entries')
+option('efi-color-highlight',
+type : 'string', 
+value : 'black,lightgray',
+description : 'boot loader color for selected entries')
 option('efi-color-edit', type : 'string', value : 'black,lightgray',
        description : 'boot loader color for option line edit')
-
-option('bashcompletiondir', type : 'string',
-       description : 'directory for bash completion scripts ["no" disables]')
-option('zshcompletiondir', type : 'string',
-       description : 'directory for zsh completion scripts ["no" disables]')
-
+option('bashcompletiondir', type : 'string',    
+description : 'directory for bash completion scripts ["no" disables]')
+option('zshcompletiondir', type : 'string',    
+description : 'directory for zsh completion scripts ["no" disables]')
 option('tests', type : 'combo', choices : ['true', 'unsafe', 'false'],
        description : 'enable extra tests with =unsafe')
 option('slow-tests', type : 'boolean', value : false,
@@ -498,13 +496,13 @@ option('fuzz-tests', type : 'boolean', value : false,
        description : 'run the fuzzer regression tests by default (with sanitizers)')
 option('install-tests', type : 'boolean', value : false,
        description : 'install test executables')
-option('log-message-verification', type : 'feature', deprecated : { 'true' : 'enabled', 'false' : 'disabled' },
+option('log-message-verification', 
+type : 'feature', deprecated : { 'true' : 'enabled', 'false' : 'disabled' },
        description : 'do fake printf() calls to verify format strings')
 option('integration-tests', type : 'boolean', value : false,
        description : 'run the integration tests')
-
-option('ok-color', type : 'combo',
-       choices : ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan',
+option('ok-color', type : 'combo',       
+choices : ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan',
                   'white', 'highlight-black', 'highlight-red', 'highlight-green',
                   'highlight-yellow', 'highlight-blue', 'highlight-magenta',
                   'highlight-cyan', 'highlight-white'],
@@ -514,26 +512,26 @@ option('urlify', type : 'boolean', value : true,
        description : 'enable pager Hyperlink ANSI sequence support')
 option('fexecve', type : 'boolean', value : false,
        description : 'use fexecve() to spawn children')
-
 option('oss-fuzz', type : 'boolean', value : false,
        description : 'build against oss-fuzz')
 option('llvm-fuzz', type : 'boolean', value : false,
        description : 'build against LLVM libFuzzer')
 option('kernel-install', type: 'boolean', value: true,
        description : 'install kernel-install and associated files')
-option('ukify', type : 'feature', deprecated : { 'true' : 'enabled', 'false' : 'disabled' },
-       description : 'install ukify')
-option('analyze', type: 'boolean', value: true,
-       description : 'install systemd-analyze')
-
+option('ukify', type : 'feature', deprecated : { 'true' : 'enabled', 'false' : 'disabled' },      
+description : 'install ukify')
+option('analyze', type: 'boolean', value: true,      
+description : 'install systemd-analyze')
 option('bpf-compiler', type : 'combo', choices : ['clang', 'gcc'],
        description : 'compiler used to build BPF programs')
 option('bpf-framework', type : 'feature', deprecated : { 'true' : 'enabled', 'false' : 'disabled' },
        description : 'build BPF programs from source code in restricted C')
 option('vmlinux-h', type : 'combo', choices : ['auto', 'provided', 'generated', 'disabled'],
        description : 'which vmlinux.h to use')
-option('vmlinux-h-path', type : 'string', value : '',
-       description : 'path to vmlinux.h to use')
-
-option('default-mountfsd-trusted-directories', type : 'boolean', value: false,
-       description : 'controls whether mountfsd should apply a relaxed policy on DDIs in system DDI directories')
+option('vmlinux-h-path',
+type : 'string', value : '',    
+description : 'path to vmlinux.h to use')
+option('default-mountfsd-trusted-directories', 
+type : 'boolean', value: false,      
+description : 'controls whether mountfsd should 
+apply (' a relaxed policy on DDIs in system DDI directories')
